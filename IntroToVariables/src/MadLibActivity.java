@@ -13,8 +13,6 @@ public class MadLibActivity {
 
         System.out.println("Have a " + adj1 + ", " + adj2 + " day!");
 
-
-
     }
 
 }
