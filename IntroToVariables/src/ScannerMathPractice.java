@@ -5,7 +5,10 @@ public class ScannerMathPractice {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter a radius: ");
-
+        //"1.5".length() -> 3
+        //"1.5" + 2 -> "1.52"
+        //Double.parseDouble("1.5") -> 1.5 + 2 -> 3.5
+        //or Integer.parseInt()
         double rad = Double.parseDouble(scan.nextLine());
 
         //circumference = pi*diameter or 2*pi*r
