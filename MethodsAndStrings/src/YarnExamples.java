@@ -20,7 +20,7 @@ public class YarnExamples {
         int counterOfAs = 0;
         for (int i = 0; i < place.length(); i++){
             String currentLetter = place.substring(i, i + 1);
-            if (currentLetter.equals("a")){
+            if (currentLetter.equals("a")) {
                 counterOfAs++;
             }
         }
@@ -36,6 +36,7 @@ public class YarnExamples {
                 counterOfPIs++;
             }
         }
+
         //2. I want to know how many WORDS START with 'p'
         String[] words = sentence.split(" ");
         int countP = 0;
@@ -61,8 +62,7 @@ public class YarnExamples {
         }
         System.out.println(countP + " words start with p!");
 
-
-
+        int answer = MyMethods.add(3, 4);
 
     }
 }

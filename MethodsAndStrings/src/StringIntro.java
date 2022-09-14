@@ -12,7 +12,9 @@ public class StringIntro {
         //an instance is a particular existing of an object
 
         //implicit parameters come BEFORE the dot
+            //only 1
         //explicit parameters go inside the parentheses
+            //0 to many
 
         boolean result = place.equals(school);
 
