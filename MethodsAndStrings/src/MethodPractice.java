@@ -20,6 +20,37 @@ public class MethodPractice {
     //to remove leading punctuation
         //chop off the first character UNTIL the first character is a letter
     //UNTIL = while loop
+    public static String chopPunctuation(String str){
+        while (!isLetter(str.charAt(0))){ // while the first character is NOT a letter
+            //chop it off
+            str = str.substring(1);
+            //we start at 1 because... I don't want position 0. It's not a letter
+        }
+
+        //can we also chop punctuation off the end? (trailing punctuation)
+        //to chop off the last letter, we KEEP all BUT the last letter
+        //hello123 -> hello12
+        //str = str.substring(0, str.length() - 1);
+        while (!isLetter(str.charAt(str.length() - 1))){
+            str = str.substring(0, str.length() - 1);
+        }
+
+        return str;
+    }
+
+    /*
+        chop("123hello");
+        str->23hello
+        str->3hello
+        str->hello
+
+     */
+
+
+
+
+
+
 
 
 
