@@ -6,6 +6,15 @@ public class Review {
     //my GOAL: remove punctuation
     public static String removePunc(String str){
         //TODO: actually remove the punctuation
+        if (str.length() == 0){
+            return "";
+        }
+        while (!(str.charAt(0) >= 'a' && str.charAt(0) <= 'z')){
+            str = str.substring(1);
+            if (str.length() == 0){
+                return "";
+            }
+        }
         return str;
     }
 
