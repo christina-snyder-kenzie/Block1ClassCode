@@ -1,0 +1,5 @@
+== vs .equals()
+
+Strings are immutable (they don't change)
+
+String
