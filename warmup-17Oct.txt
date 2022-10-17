@@ -1,0 +1,36 @@
+1. Object
+	-usually a noun
+	-can be acted upon
+	-can perfom functions
+	-created using the new keyword
+	-stored in memory
+	-a way to store information in an organized way
+
+2. Object Oriented Programming (OOP)
+	-Coding using objects
+
+3. Property 
+	-characteristic
+	-attributes
+	-In code, properties are variables
+		access dataType varName;
+	-In code, properties typically live at the start of the class
+
+4. Behavior
+	-In code, behaviors are methods
+		access returnType methodName(parameters){}
+	-Public methods are the way we interact with properties
+
+5. Constuctor 
+	-Related to properties
+	-Job: Initialize the properties
+	-In code, constructors go between properties and behaviors
+		public ClassName(parameters){
+			this.prop = prop;
+		}
+
+
+
+
+
+
