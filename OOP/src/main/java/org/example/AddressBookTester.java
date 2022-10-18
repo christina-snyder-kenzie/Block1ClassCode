@@ -13,12 +13,28 @@ public class AddressBookTester {
         System.out.println(p2);
         System.out.println(p3);
 
+
+
         System.out.println("--------");
         Address childhoodHome = new Address(3860, "Old Path Crossing", "Suwanee", "GA", "30024");
         System.out.println(childhoodHome);
         System.out.println();
         Address collegeApt = new Address(1234, "Forgotten Street", 627, "Atlanta", "GA", "30316");
         System.out.println(collegeApt);
+
+        String toTest = p1.toString();
+        int newLineIndex = toTest.indexOf("\n");
+        System.out.println(newLineIndex);
+
+        Entry test = new Entry(p1, childhoodHome, "Teacher");
+        System.out.println(test);
+
+        AddressBook contacts = new AddressBook();
+        contacts.add(test);
+        contacts.add(p2, collegeApt, "Facilitator");
+        contacts.add(p3, "Teacher");
+        contacts.add();
+        System.out.println(contacts);
 
     }
 
