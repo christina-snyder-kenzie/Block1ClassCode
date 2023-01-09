@@ -24,4 +24,6 @@ public class Die {
     public void keep(){
         keep = true;
     }
+
+    public void unKeep() {keep = false;}
 }
