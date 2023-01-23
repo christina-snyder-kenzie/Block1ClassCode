@@ -52,4 +52,64 @@ public class Book {
                 ", ISBN=" + ISBN +
                 '}';
     }
+
+    //GOAL: make a new book with combined data from b1 and b2
+    //b1.combine(b2);
+    public Book combine(Book b2){
+        //where is b1?
+        //is the this
+        //the data from b1 is this.title, etc
+
+        String newTitle = this.title + " & " + b2.getTitle();
+        String newAuthor = /*this.*/getAuthor() + " & " + b2.getAuthor();
+        String newGenre = this.genre + " & " + b2.genre;
+        //private means I can only be accessed within the file where I am defined
+        int newISBN = ISBN + b2.ISBN;
+
+        Book b3 = new Book(newTitle, newAuthor, newGenre, newISBN);
+        return b3;
+    }
+
+    //Overriding the .equals() method
+    public boolean equals(Object other){
+        //2 tests that happen first
+        //reflexivity, and non-nullity
+        if (other == null){
+            return false;
+        }
+
+        if (this == other){ //using == ON PURPOSE
+            //== compares memory addresses
+            //if MY memory address is the same as OTHER's memory address
+            //we are literally the same object
+            return true;
+        }
+
+        //we need to make sure that other is of type Book
+        //introducing: instanceof
+        // variable instanceof className
+        // will result in a true or false
+        if ( ! (other instanceof Book)){
+            return false;
+        }
+
+        //if we get here, other is a Book, but it's classified as an Object
+        //When we're classified as an object, we can ONLY do things
+            //objects can do
+
+        //String otherTitle = other.getTitle();
+
+        //type-casting changes the classification
+        Book otherBook = (Book) other;
+
+        String otherTitle = otherBook.getTitle();
+        String otherAuthor = otherBook.getAuthor();
+        int otherISBN = otherBook.ISBN;
+
+        return this.title.equals(otherTitle)
+                && this.author.equals(otherAuthor)
+                && this.ISBN == otherISBN;
+
+    }
+
 }

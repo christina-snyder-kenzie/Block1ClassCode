@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,4 +72,34 @@ public class Library {
     public void setInventory(HashMap<Integer, Book> inventory) {
         this.inventory = inventory;
     }
+
+    //GOAL: grab all books of a particular genre
+    //Key: isbn, value: book
+
+    //make a bucket (probably an arraylist?)
+    //loop over all the keys
+        //grab the book
+        //test the book for the genre
+            //toss it in the bucket
+    //our bucket will be full of books
+
+    public ArrayList<Book> grabGenre(String genre){
+        ArrayList<Book> bucket = new ArrayList<Book>();
+        for (int isbn : inventory.keySet()){
+            //V value = map.get(key);
+            Book b = inventory.get(isbn);
+            String g = b.getGenre();
+            if (b.getGenre().equals(genre)){
+                bucket.add(b);
+            }
+        }
+        return bucket;
+    }
+
+
+
+
+
+
+
 }
