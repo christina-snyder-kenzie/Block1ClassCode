@@ -41,4 +41,14 @@ public class BankAccount {
         return "Balance: $" + String.format("%.2f", balance);
     }
 
+    //GOAL: transfer an amount of money from ME to the other account
+    //return a boolean if the transfer was successful
+    public boolean transfer(BankAccount other, double amt){
+        boolean attempt = this.withdraw(amt);
+        if (attempt){
+            other.deposit(amt);
+        }
+        return attempt;
+    }
+
 }
