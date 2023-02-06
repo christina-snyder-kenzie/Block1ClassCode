@@ -2,7 +2,13 @@ package org.example;
 
 public class Consortium {
     public static void main(String[] args) {
+
         BankAccount b1 = new BankAccount();
+
+        for (int i = 0; i < 5; i++){
+            BankAccount useless = new BankAccount();
+        }
+
         b1.deposit(1000);
         System.out.println(b1);
         System.out.println("W/D 1: " + b1.withdraw(700));
@@ -60,5 +66,6 @@ public class Consortium {
 
         //edge cases-> not obvious, but still need to be accounted for
 
+        System.out.println(BankAccount.getLastAccountNumber());
     }
 }

@@ -1,11 +1,15 @@
 package org.example;
 
 public class BankAccount {
+    private static int lastAccountNumber = 999;
     private double balance;
+    private int accountNumber;
 
     public BankAccount(double init){
         balance = init;
         System.out.println("Constructor #1");
+        accountNumber = lastAccountNumber + 1;
+        lastAccountNumber++;
     }
 
     //overload the constructor
@@ -38,7 +42,7 @@ public class BankAccount {
 
     @Override
     public String toString(){
-        return "Balance: $" + String.format("%.2f", balance);
+        return /*lastAccountNumber + */"Balance: $" + String.format("%.2f", balance) + ", Account number: " + accountNumber;
     }
 
     //GOAL: transfer an amount of money from ME to the other account
@@ -51,4 +55,25 @@ public class BankAccount {
         return attempt;
     }
 
+    public static int getLastAccountNumber(){
+        return lastAccountNumber; //+ balance; cannot refer to a property here
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
