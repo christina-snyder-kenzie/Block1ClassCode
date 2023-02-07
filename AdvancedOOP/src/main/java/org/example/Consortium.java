@@ -67,5 +67,13 @@ public class Consortium {
         //edge cases-> not obvious, but still need to be accounted for
 
         System.out.println(BankAccount.getLastAccountNumber());
+
+        BankAccount forLoan = new BankAccount();
+        boolean gotLoan = forLoan.loan(CreditScore.GOOD);
+        System.out.println(gotLoan + ": " + forLoan);
+        gotLoan = forLoan.loan(CreditScore.BAD);
+        System.out.println(gotLoan + ": " + forLoan);
+        System.out.println(CreditScore.FAIR);
+
     }
 }
