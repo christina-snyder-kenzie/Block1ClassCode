@@ -1,6 +1,6 @@
 package org.example;
 
-public class Animal {
+public abstract class Animal implements Measurable{
     private String gender;
     private boolean canMove;
     private int numLegs;
@@ -9,6 +9,12 @@ public class Animal {
         this.gender = gender;
         this.canMove = canMove;
         this.numLegs = numLegs;
+    }
+
+    public abstract Animal reproduce();
+
+    public double getMeasure(){
+        return numLegs;
     }
 
     public String getGender(){
@@ -68,6 +74,11 @@ class Fish extends Animal{
         this.color = color;
         this.gillSize = gillSize;
         this.canRegenerate = canRegenerate;
+    }
+
+    public Animal reproduce(){
+        System.out.println("Laying a bunch of eggs");
+        return new Fish(getGender(), getCanMove(), this.color, this.gillSize * 0.10, this.canRegenerate);
     }
 
     public void swim(){

@@ -1,6 +1,6 @@
 package org.example;
 
-public class BankAccount {
+public class BankAccount implements Measurable{
     private static int lastAccountNumber = 999;
     private double balance;
     private int accountNumber;
@@ -23,6 +23,10 @@ public class BankAccount {
     public BankAccount(){
         this(0);
         System.out.println("Constructor #2");
+    }
+
+    public double getMeasure(){
+        return balance;
     }
 
     public void deposit(double amount){
