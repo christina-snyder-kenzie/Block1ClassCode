@@ -1,0 +1,11 @@
+delimeter (separator)
+
+String pattern = "a#b#c#d#e"
+
+String[] data = pattern.split("#");
+
+=> {a, b, c, d, e};
+
+firstLetter = data[0];
+secondLetter = data[1];
+etc
