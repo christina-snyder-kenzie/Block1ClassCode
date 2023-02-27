@@ -33,7 +33,14 @@ update the basket
 
 return numLosers >= players.size() - 1;
 */
-        return false;
+        int basket = 0;
+        for (Player currPlayer : players){
+            if (currPlayer.getHasLost()){
+                basket++;
+            }
+        }
+
+        return basket >= players.size() - 1;
     }
 
     public void takeATurn(){

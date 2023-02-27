@@ -1,0 +1,22 @@
+TODO:
+Standard Property
+RailRoads
+Utilities
+Discounter Players
+HighRoller Players
+
+In Bank-> purchaseProperty()
+
+In Monopoly -> hasAWinner()
+
+In Bank-> loadProperties()
+
+All the house/hotel crap
+	Bank Methods
+	Player Methods
+	Update TakeATurn()
+
+Add print statements to play() and takeATurn()
+	so we can the game happen
+	Maybe add a scanner to slow it down...
+

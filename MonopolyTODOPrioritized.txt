@@ -1,0 +1,18 @@
+TODO Prioritized:
+3. RailRoads
+4. Standard Property
+5. In Bank-> loadProperties()
+6. Add print statements to play() and takeATurn()
+	so we can the game happen
+	Maybe add a scanner to slow it down...
+7. Discounter Players
+8. HighRoller Players
+9. All the house/hotel crap
+	Bank Methods
+	Player Methods
+	Update TakeATurn()
+
+TODONE:
+1. In Monopoly -> hasAWinner()
+2. In Bank-> purchaseProperty()
+3a. Count numRailRoads

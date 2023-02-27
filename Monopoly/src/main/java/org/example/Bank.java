@@ -83,4 +83,16 @@ public class Bank {
         }
         return instance;
     }
+
+    public boolean sellProperty(Property prop, Player dude){
+        //if I can buy
+        if (dude.canBuyProperty(prop)) {
+            //update money situation
+            dude.makePurchase(prop.getCost());
+            //update owner situation
+            prop.setOwner(dude);
+            return true;
+        }
+        return false;
+    }
 }

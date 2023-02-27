@@ -1,0 +1,6 @@
+Hello :)
+7 squared is 49
+5 squared is 25
+11 squared is TOO BIG
+3 squared is 9
+12 squared is TOO BIG

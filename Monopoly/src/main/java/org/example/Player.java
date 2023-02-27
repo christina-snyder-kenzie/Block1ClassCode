@@ -21,7 +21,7 @@ public class Player {
 
     public boolean canBuyProperty(Property prop){
         // if we have enough money
-        return balance >= prop.getCost();
+        return balance > prop.getCost();
     }
 
     public boolean equals(Object other){
@@ -105,7 +105,7 @@ public class Player {
         this.balance = balance;
     }
 
-    public boolean isHasLost() {
+    public boolean getHasLost() {
         return hasLost;
     }
 
