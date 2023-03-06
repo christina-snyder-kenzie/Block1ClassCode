@@ -1,0 +1,24 @@
+Maps
+	Book	
+		POJO
+	HMIntro
+		HashMap Basics
+	Library
+		HashMap Instance Variable
+		HashMap Searching
+	LocalPublicLibary
+		Testing Books and Libraries
+		Testing the equals method
+		testing combine method
+	Movie
+		HashMap Instance Variable
+		POJO (Getter/Setter, ToString, Equals)
+	Pants
+		POJO
+	TechPrep	
+		Algorithms with HashMaps
+	Theater
+		Tested Movies
+
+
+
