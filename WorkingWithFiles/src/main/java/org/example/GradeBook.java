@@ -8,7 +8,7 @@ public class GradeBook {
     //GOAL: Print out the contents of the gradebook file
     public static void main(String[] args) {
         try {
-            Scanner fileScanner = new Scanner(new File("GradebookBlock1.csv"));
+            Scanner fileScanner = new Scanner(new File("src/main/java/org/example/GradebookBlock1.csv"));
             while (fileScanner.hasNextLine()){
                 String line = fileScanner.nextLine();
                 System.out.println(line);
