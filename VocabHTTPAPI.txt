@@ -1,0 +1,93 @@
+URL: Uniform Resource Locator
+	website, file, video
+		website-> file with html
+
+HTML: Hyper Text Markup Language
+	The language of the internet
+
+API: Application Programming Interface
+	Defines how we interact with a service
+
+Service: Something that does something for you
+	Google- searching service
+	Facebook- Collects stories from friends
+	TVMaze- stores information about tv shows
+
+Interface: 
+	1. A list of abstract methods
+		The subclass HAS these methods
+			Which means someone else ALWAYS can use those methods
+	2. How a person interacts with a program (user interface)
+
+
+https://api.tvmaze.com/singlesearch/shows?q=girls
+
+
+https:// 
+protocol (HTTP: Hyper Text Transfer Protocol)
+	s = secure
+
+api.tvmaze.com
+domain (Your internet provider turns this into an IP address with DNS)
+
+/singlesearch/shows
+path (similar to a file path)
+
+?
+query (fancy name for question)
+
+
+q=girls
+query string / query parameters
+	key=value
+
+
+
+https://calendar.google.com
+		/calendar/u/0/r/week/2023/4/17?pli=1
+
+
+
+https://www.youtube.com/watch?v=YX40hbAHx3s
+
+
+https://youtu.be/YX40hbAHx3s?t=151
+
+https://www.youtube.com/watch?v=YX40hbAHx3s&t=151s
+
+https://www.google.com/search?q=forged+in+fire&oq=forged+in+fire&aqs=chrome.0.0i355i433i512j46i433i512j0i512l5j69i60.1498j0j7&sourceid=chrome&ie=UTF-8&safe=active&ssui=on
+
+https://api.tvmaze.com/singlesearch/
+		shows?q=forged%20in%20fire
+
+
+How do we link what we do with this?
+
+	1. We're gonna need to build URLs
+		String manipulation
+	2. Connect to the internet
+		HttpRequest/HttpClient?
+	3. Make the API call (this is like searching or pressing enter in the search bar)
+		GET request
+			(Post/Put/Patch- more on those next week)
+	4. Receive results
+		JSON comes in
+	5. Do something with that
+		DTOs come back (objects- super basic)
+				DTOs only have properties and getters/setters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
