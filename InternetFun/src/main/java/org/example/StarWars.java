@@ -2,11 +2,12 @@ package org.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.nio.file.Path;
 import java.util.*;
 
 public class StarWars {
     public static void main(String[] args) {
-        String URL = "https://swapi.py4e.com/api/films/1/";
+        /*String URL = "https://swapi.py4e.com/api/films/1/";
         String title = grabTitle(URL);
         System.out.println(title);
         List<String> movies = grabFilmURLs(1);
@@ -15,15 +16,30 @@ public class StarWars {
             System.out.println(grabTitle(link));
         }
         System.out.println(makeNameMap("https://swapi.py4e.com/api/people/"));
+         */
+        HashMap<String, Integer> nameMap = makeNameMap("https://swapi.py4e.com/api/people/");
+        for (String name : nameMap.keySet()){
+            System.out.println(name);
+        }
+        System.out.println("From the list above, choose a character to view which movies they are in");
+        Scanner scan = new Scanner(System.in);
+        String name = scan.nextLine();
+        int id = nameMap.get(name);
+        List<String> movieURLs = grabFilmURLs(id);
+        for (String movie : movieURLs){
+            System.out.println(grabTitle(movie));
+        }
+
     }
 
     public static HashMap<String, Integer> makeNameMap(String baseURL){
         int id = 1;
         HashMap<String, Integer> map = new HashMap<>();
         boolean keepGoing = true;
-        while (keepGoing){
+        while (id < 100){
             String url = baseURL + id + "/";
             String json = APIConnector.makeGETRequest(url);
+            //System.out.println(json);
             try {
                 ObjectMapper mapper = new ObjectMapper();
                 CharacterDTO character = mapper.readValue(json, CharacterDTO.class);
@@ -31,6 +47,7 @@ public class StarWars {
                 map.put(character.getName(), id);
             } catch (Exception e){
                 keepGoing = false;
+                //System.out.println(id + " not found");
             }
             id++;
         }
