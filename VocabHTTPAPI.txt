@@ -79,7 +79,11 @@ How do we link what we do with this?
 
 
 
-
+ObjectMapper (Turning JSON into Objects)
+1. Get the JSON (might be a file, might be an API response)
+2. Make the ObjectMapper
+3. Read the json with the mapper (.readValue)
+	This requires that you have a DTO ready to go
 
 
 

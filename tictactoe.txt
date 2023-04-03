@@ -1,0 +1,56 @@
+Make a n-sized tic-tac-toe game with a save/load feature if you can't finish a game and want to come back to it
+
+Terminal Based Game (Display/Receive Information)
+
+Should we have a game board object?
+	Constructor:
+		Board Coordinates / A GRID 
+		
+	RecordMove
+	Do we have a winner? Or is it a draw? or do we keep playing?
+	
+		N in a row/column/or diagonal
+		Or run out of slots
+		public enum Result {
+			P1_WINS,
+			P2_WINS,
+			DRAW,
+			KEEP_GOING,
+			TIME_TO_SAVE
+		}
+
+		public Result findWinner(){
+			if player 1 wins
+				return Result.P1_WINS;
+		}
+
+Should we have a game PLAY object?
+	Constructor: Load players
+		We'll ask: Computer or Player? 
+	Do you want to load a game or start from scratch?
+
+	Keeps track of current player
+	playing = !winner && numTurns < numSlots
+	While (board.findWinner() == Result.KEEP_GOING){
+		Use scanner to get coordinates?
+
+		Do you want to save or keep going? (type s to save);
+		if (they type s){
+			BoardSaver.save(board)
+		}
+	}
+
+Do we need a BoardSaver object/class?
+	Two static methods:
+		Load(File)
+			returns a board with the loaded state
+		Save(board)
+			writes it to a file
+
+Players -> Whose turn it is (X or O)
+
+Scanner -> In a loop!?
+
+Option to save while playing
+
+

@@ -1,0 +1,40 @@
+If I give you the name of disney movie, can you show me the cast?
+	(No, you cannot google the movie)
+
+Things we know:
+	We have a disney API
+	You can search it with Movies
+	Characters have an IMG_URL
+	You can use IMG_URL with HTML to view the pictures
+	You can use FileIO to write HTML
+
+Things we're gonna have to do:
+	1. Get the movie first
+	2. URL Formatter
+		Path
+	3. Some JSON Action
+		Need the URL with the path
+		1. Make a HTTP Request
+		2. Receive the response
+		3. Convert it to DTO so we can access the data
+	4. CastDTO
+	5. Build the HTML file
+		Dig into the DTO
+		Accessing all the IMG_URLs
+	6. BufferedWriter (Write to a file)
+	
+
+
+
+
+HTTP Requests result in a RESPONSE
+	That response body is typically, JSON
+	That JSON can be read INTO a DTO
+		Using an ObjectMapper
+
+
+
+
+
+
+

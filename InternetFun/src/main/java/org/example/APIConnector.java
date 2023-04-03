@@ -13,6 +13,28 @@ import java.net.http.HttpResponse;
 
 public class APIConnector {
 
+    public static String makePUTRequest(String url, String requestBody){
+        HttpClient client = HttpClient.newHttpClient();
+        URI uri = URI.create(url);
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(uri)
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .PUT(HttpRequest.BodyPublishers.ofString(requestBody))
+                .build();
+        try {
+            HttpResponse<String> httpResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
+            int statusCode = httpResponse.statusCode();
+            if (statusCode == 201 || statusCode == 202 || statusCode == 200) {
+                return httpResponse.body();
+            } else {
+                return String.format("GET request failed: %d status code received", statusCode);
+            }
+        } catch (IOException | InterruptedException e) {
+            return e.getMessage();
+        }
+    }
+
     public static String makeGETRequest(String url){
         HttpClient client = HttpClient.newHttpClient(); //how we connect to the internet
         URI uri = URI.create(url); //a URI is an umbrella term for URLs
@@ -60,7 +82,7 @@ public class APIConnector {
 
     public static void main(String[] args) {
         //GOAL: Read in a tvshow with scanner, build a tvmaze api url
-
+/*
         final String ROOT_URL = "api.tvmaze.com";
         final String PROTOCOL = "https://";
         String path = "/singlesearch/shows";
@@ -83,7 +105,7 @@ public class APIConnector {
         System.out.println(response);
 
         System.out.println("That show airs at " + whatTime(response));
-
+*/
         //QUESTION: What time does cutthroat kitchen air?
 /*
         BabyTVDTO tvshowDTO = convert(response);
@@ -96,6 +118,12 @@ public class APIConnector {
         } catch (Exception e){
             System.out.println(e);
         }*/
+        String jsonForPut = "{" + "\"" + "name" + "\"" + ":\"test\"" +
+                ",\"salary\"" + ":\"123\"" +"}";
+        System.out.println(jsonForPut);
+        String response =  makePUTRequest("https://dummy.restapiexample.com/api/v1/update/21", jsonForPut);
+        System.out.println(response);
+
     }
 
     public static String whatTime(String jsonString){

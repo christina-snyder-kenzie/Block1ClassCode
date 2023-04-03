@@ -1,0 +1,10 @@
+Player Object
+	Knows their symbol (X, O, etc)
+
+	makeMove(board);
+		Use scanner to ask the user where they want to go
+		We use the board to make the move
+
+ComputerPlayer extends Player
+	makeMove(board):
+		Chooses a random empty spot

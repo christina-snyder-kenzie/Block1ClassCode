@@ -1,0 +1,24 @@
+Given a film id, what is the title?
+	should we just take the whole URL? YES
+
+	we write a method that takes URL in, and returns the title
+
+	"https://swapi.py4e.com/api/films/1/"
+	httprequest to the api
+	receive the json response
+	we want the data to go in an object
+		DTOs come in
+	from the object, retreive the title
+
+Given a person id number, what films were they in (URLS only)?
+	Can you return the list of film links?
+
+	1. Build the URL
+	2. Make the request, receive response
+	3. Make DTO
+	4. Populate the DTO
+	5. Get the films
+
+Given a character, what is his id number?
+
+Given the name of a character, what are the titles of the films they were in?
