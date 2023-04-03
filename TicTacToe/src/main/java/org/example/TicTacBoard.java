@@ -197,6 +197,50 @@ public class TicTacBoard {
         return Result.DRAW;
     }
 
+    public void displayWithLabels(){
+        System.out.print("   ");
+        for (int number = 0; number < size; number++){
+            System.out.print(number + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < size; i++){
+            System.out.print(i + " |");
+            for (int j = 0; j < size; j++){
+                //if it's null, print "_" otherwise, print the symbol
+                System.out.print(grid[i][j] == null ? "_" : grid[i][j]);
+                System.out.print("|");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean isValid(int row, int col){
+        boolean rowIsGood = row >= 0 && row < size ; //row <= size - 1
+        boolean colIsGood = col >= 0 && col <= size - 1;
+        //what happens to IsEmpty if I have a bad row or bad col?
+        //boolean spotIsEmpty = isEmpty(row, col); //THROWS OOB Exceptions with bad indexes
+
+        return rowIsGood && colIsGood && isEmpty(row, col);
+    }
+
+    public int getSize(){
+        return size;
+    }
+
+    public boolean hasSymbol(int row, int col, String symbol){
+        //could be out of bounds
+        if (row < 0 || row >= size || col < 0 || col >= size){
+            return false;
+        }
+        //could be null
+        if (grid[row][col] ==  null){
+            return false;
+        }
+        //could be the other symbol
+        //could be right
+        return grid[row][col].equals(symbol);
+    }
+
     public static void main(String[] args) {
         TicTacBoard board = new TicTacBoard(3);
         board.makeMove(1, 2, "O");
@@ -207,5 +251,19 @@ public class TicTacBoard {
         board.makeMove(2, 1, "O");
         System.out.println(board);
         System.out.println(board.determineWinner());
+       // Saver.save(board, "Save1.txt");
+        TicTacBoard loaded = Saver.load("Save1.txt");
+        System.out.println(loaded);
+/*
+        board.displayWithLabels();
+        System.out.println(board.hasSymbol(0, 1, "X"));
+        System.out.println(board.hasSymbol(0, 2, "O"));
+        System.out.println(board.hasSymbol(1, 1, "O"));
+        System.out.println(board.hasSymbol(1, 2, "O"));
+        System.out.println(board.hasSymbol(2, 1, "O"));
+        System.out.println(board.hasSymbol(2, 2, "O"));
+        */
+        System.out.println(loaded.hasSymbol(0, 1, "O"));
+        System.out.println(loaded.hasSymbol(1, 2, "O"));
     }
 }
